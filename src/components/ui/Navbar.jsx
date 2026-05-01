@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "./Logo";
 import Link from "next/link";
 
@@ -17,7 +16,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className=" shadow-xl py-5 ">
+    <div className=" py-5 z-20 ">
       <div className="main-nav max-w-7xl mx-auto  flex items-center justify-between">
         <Logo></Logo>
         <ul className="flex items-center gap-16">{navlinks}</ul>
