@@ -21,12 +21,16 @@ const Navbar = () => {
         <Logo></Logo>
         <ul className="flex items-center gap-16">{navlinks}</ul>
         <div className="btns-nav flex items-center gap-2">
-          <button className="btn rounded-xl btn-outline border-[#2563EB] text-[#2563EB] hover:text-[#ffffff] hover:bg-[#2563EB] transition-all duration-300">
-            Login
-          </button>
-          <button className="btn rounded-xl bg-[#2563EB] text-[#FFFFFF]">
-            Sign Up
-          </button>
+          <Link href="/login">
+            <button className="btn rounded-xl btn-outline border-[#2563EB] text-[#2563EB] hover:text-[#ffffff] hover:bg-[#2563EB] transition-all duration-300">
+              Login
+            </button>
+          </Link>
+          <Link href="/sign-up">
+            <button className="btn rounded-xl bg-[#2563EB] text-[#FFFFFF]">
+              Sign Up
+            </button>
+          </Link>
         </div>
       </div>
     </div>
