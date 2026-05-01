@@ -6,6 +6,9 @@
         "description": "A philosophical novel about a young shepherd named Santiago who dreams of discovering treasure and following his destiny.",
         "category": "Story",
         "available_quantity": 10,
+        "status": "available",
+        "rating": 4.6,
+        "total_reviews": 120,
         "image_url": "https://i.ibb.co.com/Vcd8j6dX/bb677893da96ac459d8f605fe3ab4125.jpg"
     },
     {
@@ -15,6 +18,9 @@
         "description": "A guide to writing clean, maintainable, and efficient code for software developers.",
         "category": "Tech",
         "available_quantity": 7,
+        "status": "available",
+        "rating": 4.8,
+        "total_reviews": 200,
         "image_url": "https://i.ibb.co.com/PZXzWqjq/Clean-Code.jpg"
     },
     {
@@ -24,6 +30,9 @@
         "description": "A classic book describing reusable solutions to common problems in software design.",
         "category": "Tech",
         "available_quantity": 6,
+        "status": "available",
+        "rating": 4.7,
+        "total_reviews": 180,
         "image_url": "https://i.ibb.co.com/LzrhCXhJ/Design-Patterns.jpg"
     },
     {
@@ -33,6 +42,9 @@
         "description": "A comprehensive textbook covering a wide range of algorithms in depth.",
         "category": "Tech",
         "available_quantity": 4,
+        "status": "available",
+        "rating": 4.9,
+        "total_reviews": 250,
         "image_url": "https://i.ibb.co.com/F4FNxKZV/Introduction-to-Algorithms.jpg"
     },
     {
@@ -42,6 +54,9 @@
         "description": "A romantic novel that critiques the British class system through the story of Elizabeth Bennet.",
         "category": "Story",
         "available_quantity": 11,
+        "status": "available",
+        "rating": 4.5,
+        "total_reviews": 140,
         "image_url": "https://i.ibb.co.com/7xcHXVyc/Pride-and-Prejudice.jpg"
     },
     {
@@ -51,6 +66,9 @@
         "description": "An introduction to string theory and the quest for a unified theory of physics.",
         "category": "Science",
         "available_quantity": 5,
+        "status": "available",
+        "rating": 4.4,
+        "total_reviews": 90,
         "image_url": "https://i.ibb.co.com/mFNTT03V/The-Elegant-Universe.jpg"
     },
     {
@@ -60,6 +78,9 @@
         "description": "A foundational work of evolutionary biology introducing the theory of natural selection.",
         "category": "Science",
         "available_quantity": 3,
+        "status": "available",
+        "rating": 4.6,
+        "total_reviews": 160,
         "image_url": "https://i.ibb.co.com/zHQ0MjdK/The-Origin-of-Species.jpg"
     },
     {
@@ -69,6 +90,9 @@
         "description": "A practical guide for software developers to improve coding practices and thinking.",
         "category": "Tech",
         "available_quantity": 8,
+        "status": "available",
+        "rating": 4.8,
+        "total_reviews": 210,
         "image_url": "https://i.ibb.co.com/sdSZ67NW/The-Pragmatic-Programmer.webp"
     },
     {
@@ -78,6 +102,9 @@
         "description": "An influential book explaining evolution from the perspective of genes.",
         "category": "Science",
         "available_quantity": 6,
+        "status": "available",
+        "rating": 4.5,
+        "total_reviews": 130,
         "image_url": "https://i.ibb.co.com/6cJxjQ2k/The-Selfish-Gene.jpg"
     },
     {
@@ -86,7 +113,10 @@
         "author": "Harper Lee",
         "description": "A novel about racial injustice and moral growth in the American South.",
         "category": "Story",
-        "available_quantity": 9,
+        "available_quantity": 0,
+        "status": "out_of_stock",
+        "rating": 4.9,
+        "total_reviews": 300,
         "image_url": "https://i.ibb.co.com/35h9ZL86/To-Kill-a-Mockingbird.jpg"
     }
 ]
