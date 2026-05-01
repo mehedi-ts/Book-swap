@@ -15,7 +15,7 @@ const BookCard = ({ book }) => {
     total_reviews,
   } = book;
   return (
-    <Card className=" rounded-2xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden p-3 ">
+    <Card className=" rounded-2xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden p-3 border-2 border-gray-200  ">
       <div className=" relative w-full aspect-3/4 rounded-xl overflow-hidden backdrop-blur-sm bg-white/90  ">
         <Image
           src={image_url}
