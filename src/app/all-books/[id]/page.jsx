@@ -4,6 +4,7 @@ import { FaRegUser, FaStar } from "react-icons/fa";
 import { GrLanguage } from "react-icons/gr";
 import { MdDateRange } from "react-icons/md";
 import { SiPagekit } from "react-icons/si";
+import { Description } from "@heroui/react";
 
 const BookDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -11,15 +12,28 @@ const BookDetailsPage = async ({ params }) => {
   const bookData = await res.json();
 
   const book = bookData.find((b) => b.id === Number(id));
+  console.log(book);
   const {
+    total_reviews,
     title,
     description,
-    available_quantity,
     image_url,
-    author,
     rating,
-    total_reviews,
+    author,
+    pages,
+    published_year,
+    language,
   } = book;
+
+  // const {
+  //   title,
+  //   description,
+  //   available_quantity,
+  //   image_url,
+  //   author,
+  //   rating,
+  //   total_reviews,
+  // } = book;
   return (
     <div className="max-w-7xl w-full mx-auto">
       <div className="details-main">
@@ -60,7 +74,7 @@ const BookDetailsPage = async ({ params }) => {
                 </div>
                 <div className="text-gray-500 font-semibold text-sm ">
                   <h4>Published</h4>
-                  <p className="text-gray-800">1988</p>
+                  <p className="text-gray-800">{published_year}</p>
                 </div>
               </div>
               <div className="box1 p-2 rounded-lg bg-white shadow-sm flex items-center gap-2 ">
@@ -69,7 +83,7 @@ const BookDetailsPage = async ({ params }) => {
                 </div>
                 <div className="text-gray-500 font-semibold text-sm ">
                   <h4>Pages</h4>
-                  <p className="text-gray-800">208</p>
+                  <p className="text-gray-800">{pages}</p>
                 </div>
               </div>
               <div className="box1 p-2 rounded-lg bg-white shadow-sm flex items-center gap-2 ">
@@ -78,7 +92,7 @@ const BookDetailsPage = async ({ params }) => {
                 </div>
                 <div className="text-gray-500 font-semibold text-sm ">
                   <h4>Language</h4>
-                  <p className="text-gray-800">English</p>
+                  <p className="text-gray-800">{language}</p>
                 </div>
               </div>
             </div>
