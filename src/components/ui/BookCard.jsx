@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Button, Card } from "@heroui/react";
 import { Star } from "@gravity-ui/icons";
+import Link from "next/link";
 
 const BookCard = ({ book }) => {
   console.log(book);
@@ -41,9 +42,11 @@ const BookCard = ({ book }) => {
         </div>
         {/* <p className="text-[#434750] text-base line-clamp-2">{description}</p> */}
         <div className="flex items-center justify-end mt-4">
-          <Button className="bg-[#2563EB] hover:bg-[#1c58db] w-full rounded-lg font-semibold text-white">
-            Details
-          </Button>
+          <Link className="w-full" href={`/all-books/${book.id}`}>
+            <Button className="bg-[#2563EB] hover:bg-[#1c58db] w-full rounded-lg font-semibold text-white">
+              Details
+            </Button>
+          </Link>
         </div>
       </div>
     </Card>
