@@ -11,7 +11,7 @@ const Navbar = () => {
         <Link href="/all-books">All Books</Link>
       </li>
       <li className="font-semibold hover:text-[#2563EB] transition-all duration-300">
-        <Link href="/">Profile</Link>
+        <Link href="/profile">Profile</Link>
       </li>
     </>
   );

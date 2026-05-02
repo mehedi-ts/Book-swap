@@ -1,10 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { FaRegUser, FaStar } from "react-icons/fa";
+import { FaRegHeart, FaRegUser, FaStar } from "react-icons/fa";
 import { GrLanguage } from "react-icons/gr";
 import { MdDateRange } from "react-icons/md";
 import { SiPagekit } from "react-icons/si";
 import { Description } from "@heroui/react";
+import { BsShareFill } from "react-icons/bs";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { CiHeart } from "react-icons/ci";
 
 const BookDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -13,6 +16,9 @@ const BookDetailsPage = async ({ params }) => {
 
   const book = bookData.find((b) => b.id === Number(id));
   console.log(book);
+  if (!book) {
+    return <h1>no book data</h1>;
+  }
   const {
     total_reviews,
     title,
@@ -36,7 +42,7 @@ const BookDetailsPage = async ({ params }) => {
   // } = book;
   return (
     <div className="max-w-7xl w-full mx-auto">
-      <div className="details-main">
+      <div className="details-main py-16">
         <div className="main1 grid grid-cols-3 gap-4">
           <div className="main1-imgs col-span-1">
             <div className="main-img border-2 border-gray-200 p-3 rounded-2xl overflow-hidden ">
@@ -45,8 +51,8 @@ const BookDetailsPage = async ({ params }) => {
               </div>
             </div>
           </div>
-          <div className=" main1-con col-span-2 border-2 border-gray-200 px-3 space-y-10 rounded-xl">
-            <div className="text space-y-4">
+          <div className=" main1-con col-span-2  px-3 space-y-10 rounded-xl flex flex-col h-full pb-10">
+            <div className="text space-y-4 flex flex-col h-full">
               <h1 className="text-3xl font-bold text-gray-800">{title}</h1>
               <p className="font-medium text-gray-500">
                 by <span className="text-[#2563EB]">{author}</span>
@@ -56,7 +62,9 @@ const BookDetailsPage = async ({ params }) => {
                 <span>{rating}</span>
                 {`(${total_reviews} Reviews)`}
               </p>
-              <p className="max-w-lg text-sm text-gray-500">{description}</p>
+              <p className="max-w-lg text-sm text-gray-500  flex-1">
+                {description}
+              </p>
             </div>
             <div className="book-stats grid grid-cols-4 gap-5">
               <div className="box1 p-2 rounded-lg bg-white shadow-sm flex items-center gap-2 ">
@@ -95,6 +103,20 @@ const BookDetailsPage = async ({ params }) => {
                   <p className="text-gray-800">{language}</p>
                 </div>
               </div>
+            </div>
+            <div className="action-btn-details flex items-center gap-5">
+              <button className="btn bg-[#2563EB] hover:bg-[#1c58db] text-white">
+                {" "}
+                Borrow Book <FaArrowRightLong size={20} />
+              </button>
+              <button className="btn btn-outline border-[#2563EB] hover:bg-[#1c58db] text-[#1c58db] hover:text-white">
+                {" "}
+                Add to Wishlist <FaRegHeart />
+              </button>
+              <button className="btn text-[#1c58db]">
+                {" "}
+                <BsShareFill size={20} />
+              </button>
             </div>
           </div>
         </div>
