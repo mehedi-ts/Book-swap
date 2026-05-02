@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   Card,
@@ -12,9 +13,18 @@ import Link from "next/link";
 import React from "react";
 
 const signUpPage = () => {
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    alert("Form submitted successfully!");
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const imageUrl = e.target.imageUrl.value;
+    const { data, error } = await authClient.signUp.email({
+      email,
+      password,
+      name,
+      imageUrl,
+    });
   };
   return (
     <div className="max-w-7xl mx-auto  w-full py-10 min-h-[75vh] flex items-center justify-center   ">
@@ -30,17 +40,41 @@ const signUpPage = () => {
         <Form onSubmit={onSubmit}>
           <Card.Content>
             <div className="flex flex-col gap-4">
-              <TextField name="name" type="text">
+              <TextField name="name" type="text" className="w-full">
                 <Label>Name</Label>
-                <Input placeholder="Jone dho" variant="secondary" />
+                <Input
+                  placeholder="Jone dho"
+                  variant="secondary"
+                  className="w-full"
+                  name="name"
+                />
+              </TextField>
+              <TextField name="imageUrl" type="text">
+                <Label>Image Url</Label>
+                <Input
+                  placeholder="Your image url"
+                  variant="secondary"
+                  className="w-full"
+                  name="imageUrl"
+                />
               </TextField>
               <TextField name="email" type="email">
                 <Label>Email</Label>
-                <Input placeholder="email@example.com" variant="secondary" />
+                <Input
+                  placeholder="email@example.com"
+                  variant="secondary"
+                  className="w-full"
+                  name="email"
+                />
               </TextField>
               <TextField name="password" type="password">
                 <Label>Password</Label>
-                <Input placeholder="••••••••" variant="secondary" />
+                <Input
+                  placeholder="••••••••"
+                  variant="secondary"
+                  className="w-full"
+                  name="password"
+                />
               </TextField>
               <Checkbox id="basic-terms">
                 <Checkbox.Control className="border border-gray-300">

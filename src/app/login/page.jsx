@@ -1,13 +1,21 @@
 "use client";
 import Logo from "@/components/ui/Logo";
+import { authClient } from "@/lib/auth-client";
 import { Button, Card, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
 import React from "react";
 
 const LoginPage = () => {
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    alert("Form submitted successfully!");
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    const { data, error } = await authClient.signIn.email({
+      email,
+      password,
+    });
+    console.log(data, error);
   };
 
   return (
