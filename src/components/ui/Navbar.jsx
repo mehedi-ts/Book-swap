@@ -8,7 +8,7 @@ const Navbar = () => {
         <Link href="/">Home</Link>
       </li>
       <li className="font-semibold hover:text-[#2563EB] transition-all duration-300">
-        <Link href="/">All Books</Link>
+        <Link href="/all-books">All Books</Link>
       </li>
       <li className="font-semibold hover:text-[#2563EB] transition-all duration-300">
         <Link href="/">Profile</Link>

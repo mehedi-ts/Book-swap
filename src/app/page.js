@@ -1,7 +1,6 @@
 import Banner from "@/components/homeUi/Banner";
 import FeaturedBooks from "@/components/homeUi/FeaturedBooks";
 import Marquee from "@/components/homeUi/Marquee";
-import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
@@ -10,7 +9,6 @@ export default function Home() {
         <Banner></Banner>
         <Marquee></Marquee>
         <FeaturedBooks></FeaturedBooks>
-        <Footer></Footer>
       </div>
     </div>
   );

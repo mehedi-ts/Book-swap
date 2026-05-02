@@ -17,7 +17,7 @@ const signUpPage = () => {
     alert("Form submitted successfully!");
   };
   return (
-    <div className="max-w-7xl mx-auto  w-full py-10 min-h-[90vh] flex items-center justify-center   ">
+    <div className="max-w-7xl mx-auto  w-full py-10 min-h-[75vh] flex items-center justify-center   ">
       <Card className="w-2/4 shadow-2xl mx-auto">
         <div className="flex items-center justify-center flex-col space-y-2">
           <p className="text-2xl font-bold text-gray-800">
