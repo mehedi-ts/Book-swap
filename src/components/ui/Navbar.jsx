@@ -8,7 +8,7 @@ import { LuLogOut } from "react-icons/lu";
 const Navbar = () => {
   const userData = authClient.useSession();
   const user = userData.data?.user;
-  console.log(user);
+
   const navlinks = (
     <>
       <li className=" font-semibold hover:text-[#2563EB] transition-all duration-300">

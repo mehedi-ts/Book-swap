@@ -26,12 +26,17 @@ const signUpPage = () => {
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const image = e.target.imageUrl.value;
+    const image = e.target.image.value;
     const { data, error } = await authClient.signUp.email({
       email,
       password,
       name,
       image,
+    });
+  };
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
     });
   };
   return (
@@ -124,7 +129,10 @@ const signUpPage = () => {
           </Fieldset>
         </Form>
         <div className="divider my-6">or continue with</div>
-        <button className="btn flex items-center gap-1 bg-white text-black border-[#e5e5e5] w-full">
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn flex items-center gap-1 bg-white text-black border-[#e5e5e5] w-full"
+        >
           <svg
             aria-label="Google logo"
             width="20"

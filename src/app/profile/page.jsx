@@ -1,3 +1,5 @@
+"use client";
+import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import React from "react";
 import { CiLock } from "react-icons/ci";
@@ -6,6 +8,9 @@ import { IoIosLogOut } from "react-icons/io";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 const ProfilePage = () => {
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+  const { name, email, image } = user || {};
   return (
     <div className="max-w-7xl mx-auto w-full">
       <div className="main-profile py-10">
@@ -23,23 +28,20 @@ const ProfilePage = () => {
           </div>
         </div>
         <div className="pro flex items-center gap-7 p-9 border-2 border-gray-200 rounded-xl mb-4">
-          <div className="img  border rounded-full overflow-hidden">
+          <div className="img   rounded-full overflow-hidden">
             <div className=" relative w-40 h-40">
               <Image
-                src="/images/profile.jpg"
+                src={image || "https://i.ibb.co.com/Q78Gvm6H/images.png"}
                 alt="profile"
                 fill
                 className=" object-cover"
+                referrerPolicy="no-referrer"
               />
             </div>
           </div>
           <div className="info">
-            <h1 className="text-3xl font-bold text-gray-800 mb-3">
-              Mehedi Hasan
-            </h1>
-            <p className="text-base font-medium text-gray-500 my-2">
-              mehedihasan@gmail.com
-            </p>
+            <h1 className="text-3xl font-bold text-gray-800 mb-3">{name}</h1>
+            <p className="text-base font-medium text-gray-500 my-2">{email}</p>
             <p className="text-base font-medium text-gray-500 my-2">
               Dhaka,Bangladesh
             </p>

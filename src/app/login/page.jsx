@@ -31,6 +31,11 @@ const LoginPage = () => {
     });
     console.log(data, error);
   };
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
 
   return (
     <div className="max-w-7xl mx-auto  w-full py-10 min-h-[75vh] flex items-center justify-center   ">
@@ -105,7 +110,10 @@ const LoginPage = () => {
           </Fieldset>
         </Form>
         <div className="divider my-6">or continue with</div>
-        <button className="btn flex items-center gap-1 bg-white text-black border-[#e5e5e5] w-full">
+        <button
+          onClick={handleGoogleSignIn}
+          className="btn flex items-center gap-1 bg-white text-black border-[#e5e5e5] w-full"
+        >
           <svg
             aria-label="Google logo"
             width="20"
