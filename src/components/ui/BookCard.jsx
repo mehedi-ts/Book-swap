@@ -5,7 +5,6 @@ import { Star } from "@gravity-ui/icons";
 import Link from "next/link";
 
 const BookCard = ({ book }) => {
-  console.log(book);
   const {
     title,
     description,

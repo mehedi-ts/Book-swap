@@ -51,7 +51,7 @@ const AllBooksPage = () => {
     acc[cat] = (acc[cat] || 0) + 1;
     return acc;
   }, {});
-  console.log(catCount);
+
   return (
     <div className="max-w-7xl w-full mx-auto grid grid-cols-4 gap-5 py-12">
       <div className="filter-box  col-span-1 flex flex-col  px-5 bg-white rounded-2xl shadow-sm p-5 space-y-7 h-fit text-gray-800">

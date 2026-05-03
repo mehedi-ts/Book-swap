@@ -29,7 +29,6 @@ const LoginPage = () => {
       password,
       callbackURL: "/",
     });
-    console.log(data, error);
   };
   const handleGoogleSignIn = async () => {
     await authClient.signIn.social({

@@ -15,7 +15,7 @@ const BookDetailsPage = async ({ params }) => {
   const bookData = await res.json();
 
   const book = bookData.find((b) => b.id === Number(id));
-  console.log(book);
+
   if (!book) {
     return <h1>no book data</h1>;
   }
