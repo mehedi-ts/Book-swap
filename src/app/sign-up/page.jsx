@@ -18,6 +18,7 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import React from "react";
+import { FiUserPlus } from "react-icons/fi";
 
 const signUpPage = () => {
   const onSubmit = async (e) => {
@@ -116,7 +117,7 @@ const signUpPage = () => {
                 className="btn w-full bg-[#2563EB] text-[#FFFFFF]"
                 type="submit"
               >
-                <Check />
+                <FiUserPlus />
                 Sign Up
               </Button>
             </div>
