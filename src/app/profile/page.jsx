@@ -1,4 +1,5 @@
 "use client";
+import ProfileUpdate from "@/components/profile/ProfileUpdate";
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import React from "react";
@@ -22,9 +23,7 @@ const ProfilePage = () => {
             </p>
           </div>
           <div>
-            <button className="btn bg-[#2563EB]  text-[#FFFFFF]">
-              <FaRegEdit size={16} /> Edit Profile
-            </button>
+            <ProfileUpdate></ProfileUpdate>
           </div>
         </div>
         <div className="pro flex items-center gap-7 p-9 border-2 border-gray-200 rounded-xl mb-4">
@@ -83,7 +82,6 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
-        <div></div>
       </div>
     </div>
   );
