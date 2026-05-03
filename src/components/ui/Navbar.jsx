@@ -4,31 +4,40 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { Avatar } from "@heroui/react";
 import { LuLogOut } from "react-icons/lu";
+import { usePathname } from "next/navigation";
+import Nabmenu from "./Nabmenu";
 
 const Navbar = () => {
+  const pathName = usePathname();
   const userData = authClient.useSession();
   const user = userData.data?.user;
 
   const navlinks = (
     <>
-      <li className=" font-semibold hover:text-[#2563EB] transition-all duration-300">
+      <li
+        className={`font-medium  hover:text-[#2563EB]  duration-300 ${pathName === "/" ? "text-[#2563EB]  border-b-2  border-[#2563EB]" : "text-gray-700"}`}
+      >
         <Link href="/">Home</Link>
       </li>
-      <li className="font-semibold hover:text-[#2563EB] transition-all duration-300">
+      <li
+        className={`font-medium  hover:text-[#2563EB] duration-300 ${pathName === "/all-books" ? "text-[#2563EB]  border-b-2 border-[#2563EB]" : "text-gray-700"}`}
+      >
         <Link href="/all-books">All Books</Link>
       </li>
-      <li className="font-semibold hover:text-[#2563EB] transition-all duration-300">
+      <li
+        className={` font-medium  hover:text-[#2563EB] duration-300 ${pathName === "/profile" ? "text-[#2563EB]  border-b-2 border-[#2563EB]" : "text-gray-700"}`}
+      >
         <Link href="/profile">Profile</Link>
       </li>
     </>
   );
   return (
-    <div className=" py-5 z-20 ">
-      <div className="main-nav max-w-7xl mx-auto  flex items-center justify-between">
+    <div className=" sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 mb-5">
+      <div className="main-nav max-w-7xl mx-auto  flex items-center justify-between px-6 py-6">
         <Logo></Logo>
-        <ul className="flex items-center gap-16">{navlinks}</ul>
+        <ul className="md:flex hidden items-center gap-10 ">{navlinks}</ul>
         {user ? (
-          <div className="btns-nav flex items-center gap-2">
+          <div className="btns-nav md:flex hidden items-center gap-2 ">
             <Avatar>
               <Avatar.Image
                 alt="John Doe"
@@ -46,7 +55,7 @@ const Navbar = () => {
             </button>
           </div>
         ) : (
-          <div className="btns-nav flex items-center gap-2">
+          <div className="btns-nav md:flex hidden items-center gap-2">
             <Link href="/login">
               <button className="btn rounded-xl btn-outline border-[#2563EB] text-[#2563EB] hover:text-[#ffffff] hover:bg-[#2563EB] transition-all duration-300">
                 Login
@@ -59,6 +68,9 @@ const Navbar = () => {
             </Link>
           </div>
         )}
+        <div className=" hidden">
+          <Nabmenu></Nabmenu>
+        </div>
       </div>
     </div>
   );

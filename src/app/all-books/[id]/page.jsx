@@ -43,15 +43,15 @@ const BookDetailsPage = async ({ params }) => {
   return (
     <div className="max-w-7xl w-full mx-auto">
       <div className="details-main py-16">
-        <div className="main1 grid grid-cols-3 gap-4">
-          <div className="main1-imgs col-span-1">
+        <div className="main1 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="main1-imgs md:col-span-1">
             <div className="main-img border-2 border-gray-200 p-3 rounded-2xl overflow-hidden ">
               <div className="relative h-120 w-full overflow-hidden rounded-xl">
                 <Image src={image_url} alt={title} fill />
               </div>
             </div>
           </div>
-          <div className=" main1-con col-span-2  px-3 space-y-10 rounded-xl flex flex-col h-full pb-10">
+          <div className=" main1-con md:col-span-2  px-3 space-y-10 rounded-xl flex flex-col h-full pb-10">
             <div className="text space-y-4 flex flex-col h-full">
               <h1 className="text-3xl font-bold text-gray-800">{title}</h1>
               <p className="font-medium text-gray-500">
@@ -66,7 +66,7 @@ const BookDetailsPage = async ({ params }) => {
                 {description}
               </p>
             </div>
-            <div className="book-stats grid grid-cols-4 gap-5">
+            <div className="book-stats grid grid-cols-2 md:grid-cols-4 gap-5">
               <div className="box1 p-2 rounded-lg bg-white shadow-sm flex items-center gap-2 ">
                 <div className="p-3 bg-[#f1efef] rounded-lg flex items-center justify-center ">
                   <FaRegUser size={20} />

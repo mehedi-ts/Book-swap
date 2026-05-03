@@ -1,4 +1,5 @@
 "use client";
+import Filter from "@/components/allBooks/Filter";
 import BookCard from "@/components/ui/BookCard";
 import { Description, FieldError, Label, SearchField } from "@heroui/react";
 import { useEffect, useState } from "react";
@@ -53,8 +54,8 @@ const AllBooksPage = () => {
   }, {});
 
   return (
-    <div className="max-w-7xl w-full mx-auto grid grid-cols-4 gap-5 py-12">
-      <div className="filter-box  col-span-1 flex flex-col  px-5 bg-white rounded-2xl shadow-sm p-5 space-y-7 h-fit text-gray-800">
+    <div className="max-w-7xl w-full mx-auto grid-cols-1 grid md:grid-cols-4 gap-5 py-3 md:py-5 lg:py-10">
+      <div className="filter-box sticky hidden md:flex top-5 col-span-1 flex-col  px-5 bg-white rounded-2xl shadow-sm p-5 space-y-7 h-fit text-gray-800">
         <div className="flex items-center justify-between max-h-fit">
           {" "}
           <p className="text-2xl font-bold">Filters</p>{" "}
@@ -253,7 +254,7 @@ const AllBooksPage = () => {
         </div>
       </div>
       <div className="con-box  col-span-3">
-        <nav className="flex justify-between items-center">
+        <nav className="flex flex-col md:flex-row md:justify-between gap-6 justify-center items-center ">
           <div>
             {" "}
             <h2 className="text-3xl font-bold text-gray-800 space-y-1">
@@ -261,7 +262,7 @@ const AllBooksPage = () => {
             </h2>
           </div>
 
-          <div className="h-10 w-[50%]">
+          <div className="h-10 md:w-[50%] w-[90%]">
             <div className="join w-full h-11  border-2 border-gray-300 ">
               <input
                 type="text"
@@ -275,10 +276,37 @@ const AllBooksPage = () => {
               </button>
             </div>
           </div>
+          <select
+            className="select  text-xl text-gray-600 focus:outline-none flex items-center justify-center  select-bordered md:hidden w-[90%]"
+            onChange={(e) => {
+              const value = e.target.value;
+
+              if (value === "all") {
+                setSelectedCategories([]);
+                setAppliedCategories([]);
+              } else {
+                setSelectedCategories([value]);
+                setAppliedCategories([value]);
+              }
+            }}
+          >
+            <option value="all">All Categories</option>
+            <option value="Story">Story ({catCount["Story"] || 0})</option>
+            <option value="Tech">Tech ({catCount["Tech"] || 0})</option>
+            <option value="Science">
+              Science ({catCount["Science"] || 0})
+            </option>
+            <option value="Self Help">
+              Self Help ({catCount["Self Help"] || 0})
+            </option>
+            <option value="Business">
+              Business ({catCount["Business"] || 0})
+            </option>
+          </select>
         </nav>
 
         <div className="mt-10">
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredBooks.map((book) => (
               <BookCard key={book.id} book={book}></BookCard>
             ))}
