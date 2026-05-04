@@ -1,12 +1,12 @@
-# Book Swipe
+# Book Swap
 
-Book Swipe is a community-driven web platform that allows users to borrow and lend books easily. It promotes a sharing culture, making reading more accessible without the need to purchase every book.
+Book Swap is a community-driven web platform that allows users to borrow and lend books easily. It promotes a sharing culture, making reading more accessible without the need to purchase every book.
 
 ## Live URL
 https://book-swap-gilt-tau.vercel.app/
 
 ## Purpose
-The goal of Book Swipe is to simplify book sharing by connecting people who are willing to lend books with those who want to read them.
+The goal of Book Swap is to simplify book sharing by connecting people who are willing to lend books with those who want to read them.
 
 ## Features
 - User authentication and protected routes   
@@ -16,7 +16,7 @@ The goal of Book Swipe is to simplify book sharing by connecting people who are 
 - Clean UI with loading and empty states  
 
 ## Preview
-![Book Swipe Preview](https://i.ibb.co.com/DDFktPkN/Chat-GPT-Image-May-4-2026-08-23-35-PM.png)
+![Book Swap Preview](https://i.ibb.co.com/DDFktPkN/Chat-GPT-Image-May-4-2026-08-23-35-PM.png)
 
 ## Mockup
 https://i.ibb.co.com/DDFktPkN/Chat-GPT-Image-May-4-2026-08-23-35-PM.png
@@ -27,7 +27,7 @@ Database: MongoDB
 Authentication: Better Auth  
 
 ## Packages
-react, next, tailwindcss, axios, react-toastify, mongoose,
+react, next, tailwindcss, axios, react-toastify, mongoose
 
 ## Author
 Mehedi Hasan  
