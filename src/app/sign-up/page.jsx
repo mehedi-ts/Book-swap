@@ -40,8 +40,8 @@ const signUpPage = () => {
     });
   };
   return (
-    <div className="max-w-7xl mx-auto  w-full py-10 min-h-[75vh] flex items-center justify-center   ">
-      <div className=" p-4 border-2 border-gray-200 rounded-2xl shadow-md w-1/2">
+    <div className="max-w-7xl mx-auto  w-full py-3 md:py-4 lg:py-7 min-h-[75vh] flex items-center justify-center   ">
+      <div className=" p-4 border-2 border-gray-200 rounded-2xl shadow-md w-[90%] md:w-2/3 lg:w-1/2">
         <Form className="w-full max-w-full flex" onSubmit={onSubmit}>
           <Fieldset className="">
             <div className="flex flex-col items-center">
