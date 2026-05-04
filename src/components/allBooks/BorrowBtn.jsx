@@ -23,7 +23,7 @@ const BorrowBtn = () => {
         className="btn bg-[#2563EB] hover:bg-[#1c58db] text-white"
       >
         {" "}
-        Borrow Book <FaArrowRightLong size={20} />
+        Borrow This Book <FaArrowRightLong size={20} />
       </button>
     </div>
   );

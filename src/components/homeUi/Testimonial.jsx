@@ -31,7 +31,7 @@ const Testimonial = () => {
     },
   ];
   return (
-    <section className="max-w-7xl mx-auto px-3 py-10">
+    <section className="max-w-7xl mx-auto px-3 py-6">
       <div className="text-center md:text-left mb-10">
         <h2 className="text-3xl font-bold text-gray-800">What Our Users Say</h2>
       </div>

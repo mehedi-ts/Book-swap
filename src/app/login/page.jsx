@@ -16,11 +16,24 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
-import React from "react";
+import { useEffect } from "react";
 import { IoIosLock } from "react-icons/io";
 import { toast } from "react-toastify";
+import { useSearchParams } from "next/navigation";
 
 const LoginPage = () => {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const error = searchParams.get("error");
+
+    if (error === "unauthorized") {
+      toast.error("Please login first to access this page.", {
+        toastId: "unauthorized-error",
+      });
+    }
+  }, [searchParams]);
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -35,6 +48,7 @@ const LoginPage = () => {
       toast.error(error.message || "Login failed");
       return;
     }
+    toast.success("Login successful!");
   };
   const handleGoogleSignIn = async () => {
     await authClient.signIn.social({

@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Book Swipe
 
-## Getting Started
+Book Swipe is a community-driven web platform that allows users to borrow and lend books easily. It promotes a sharing culture, making reading more accessible without the need to purchase every book.
 
-First, run the development server:
+## Live URL
+https://book-swap-gilt-tau.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Purpose
+The goal of Book Swipe is to simplify book sharing by connecting people who are willing to lend books with those who want to read them.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+- User authentication and protected routes   
+- Borrow request system  
+- Browse available books  
+- Responsive design across devices  
+- Clean UI with loading and empty states  
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Preview
+![Book Swipe Preview](https://i.ibb.co.com/DDFktPkN/Chat-GPT-Image-May-4-2026-08-23-35-PM.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Mockup
+https://i.ibb.co.com/DDFktPkN/Chat-GPT-Image-May-4-2026-08-23-35-PM.png
 
-## Learn More
+## Tech Stack
+Frontend: React, Next.js, Tailwind CSS    
+Database: MongoDB  
+Authentication: Better Auth  
 
-To learn more about Next.js, take a look at the following resources:
+## Packages
+react, next, tailwindcss, axios, react-toastify, mongoose,
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+Mehedi Hasan  
+https://github.com/mehedi-ts

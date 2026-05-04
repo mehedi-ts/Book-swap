@@ -7,8 +7,8 @@ const FeaturedBooks = async () => {
   const futuredBooks = bookData.slice(0, 4);
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="py-7">
+    <div className="max-w-7xl mx-auto py-10">
+      <div className="">
         <h2 className="text-3xl font-bold text-gray-800 mb-10">
           Featured Books
         </h2>

@@ -28,7 +28,7 @@ const Choose = () => {
   ];
 
   return (
-    <section className=" py-10 px-3 ">
+    <section className=" py-6 px-3 ">
       <div className="max-w-7xl mx-auto">
         <div className="text-center md:text-left mb-10">
           <h2 className="text-3xl font-bold text-gray-800">Why Choose Us</h2>

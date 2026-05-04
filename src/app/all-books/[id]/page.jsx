@@ -30,6 +30,7 @@ const BookDetailsPage = async ({ params }) => {
     pages,
     published_year,
     language,
+    available_quantity,
   } = book;
 
   // const {
@@ -64,8 +65,8 @@ const BookDetailsPage = async ({ params }) => {
                 {`(${total_reviews} Reviews)`}
               </p>
               <p className="max-w-lg text-sm text-gray-500  ">{description}</p>
-              <p className="text-sm font-medium text-green-600 mt-2 flex-1">
-                {`Available Copies: 5`}
+              <p className="text-base font-medium text-green-600  flex-1">
+                {`Available Quantity: ${available_quantity}`}
               </p>
             </div>
             <div className="book-stats grid grid-cols-2 md:grid-cols-4 gap-5">
@@ -106,7 +107,7 @@ const BookDetailsPage = async ({ params }) => {
                 </div>
               </div>
             </div>
-            <div className="action-btn-details flex items-center gap-5">
+            <div className="action-btn-details flex flex-col md:flex-row  items-start md:items-center gap-5">
               <BorrowBtn></BorrowBtn>
               <button className="btn btn-outline border-[#2563EB] hover:bg-[#1c58db] text-[#1c58db] hover:text-white">
                 {" "}

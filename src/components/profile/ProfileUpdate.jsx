@@ -3,20 +3,8 @@ import { Envelope } from "@gravity-ui/icons";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 import { FaRegEdit } from "react-icons/fa";
 const ProfileUpdate = () => {
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    const name = e.target.name.value;
-    const image = e.target.image.value;
-    await authClient.updateUser({
-      image,
-      name,
-    });
-  };
   return (
     <Modal>
-      <Button className="btn bg-[#2563EB]  text-[#FFFFFF]">
-        <FaRegEdit size={16} /> Edit Profile
-      </Button>
       <Modal.Backdrop>
         <Modal.Container placement="auto">
           <Modal.Dialog className="sm:max-w-md">

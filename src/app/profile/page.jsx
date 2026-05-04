@@ -1,7 +1,9 @@
 "use client";
 import ProfileUpdate from "@/components/profile/ProfileUpdate";
 import { authClient } from "@/lib/auth-client";
+import { Button } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { CiLock } from "react-icons/ci";
 import { FaAngleRight, FaRegEdit } from "react-icons/fa";
@@ -38,7 +40,11 @@ const ProfilePage = () => {
             </p>
           </div>
           <div>
-            <ProfileUpdate></ProfileUpdate>
+            <Link href="/profile/editprofile">
+              <Button className="btn bg-[#2563EB]  text-[#FFFFFF]">
+                <FaRegEdit size={16} /> Edit Profile
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
