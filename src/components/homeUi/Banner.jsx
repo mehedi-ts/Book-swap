@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BookOpen, House, Person, Target } from "@gravity-ui/icons";
 import { GoDotFill } from "react-icons/go";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -27,9 +28,11 @@ const Banner = () => {
                 learning journey.
               </span>
             </p>
-            <button className="btn bg-linear-to-r from-[#2563EB] to-[#3B82F6] text-[#FFFFFF] font-semibold max-w-fit ">
-              Browse Now →
-            </button>
+            <Link href="/all-books">
+              <button className="btn bg-linear-to-r from-[#2563EB] to-[#3B82F6] text-[#FFFFFF] font-semibold max-w-fit ">
+                Browse Now →
+              </button>
+            </Link>
             <div className="stats-section hidden sm:flex sm:flex-row items-center gap-5 md:gap-8 mt-10">
               <div className="stats-box1 flex gap-5 items-center">
                 <div className="  w-10 h-10 flex items-center justify-center rounded-full bg-[#E0F2FE]">

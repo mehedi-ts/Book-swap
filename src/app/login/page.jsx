@@ -103,7 +103,7 @@ const LoginPage = () => {
                   className="flex items-center justify-center"
                   size={20}
                 />
-                <span>Sign In</span>
+                <span>Login</span>
               </Button>
             </div>
           </Fieldset>
