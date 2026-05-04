@@ -42,16 +42,16 @@ const BookDetailsPage = async ({ params }) => {
   // } = book;
   return (
     <div className="max-w-7xl w-full mx-auto">
-      <div className="details-main py-16">
-        <div className="main1 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="main1-imgs md:col-span-1">
-            <div className="main-img border-2 border-gray-200 p-3 rounded-2xl overflow-hidden ">
-              <div className="relative h-120 w-full overflow-hidden rounded-xl">
+      <div className="details-main py-1 md:py-3 lg:py-5">
+        <div className="main1 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 gap-4">
+          <div className="main1-imgs lg:col-span-1">
+            <div className="main-img border-2 lg:w-full md:w-2/3 md:mx-auto border-gray-200 p-3 rounded-2xl overflow-hidden ">
+              <div className="relative h-120 md:h-150  md:w-full md:mx-auto lg:w-full overflow-hidden rounded-xl">
                 <Image src={image_url} alt={title} fill />
               </div>
             </div>
           </div>
-          <div className=" main1-con md:col-span-2  px-3 space-y-10 rounded-xl flex flex-col h-full pb-10">
+          <div className=" main1-con lg:col-span-2  px-3 md:px-7 space-y-10 rounded-xl flex flex-col h-full pb-10">
             <div className="text space-y-4 flex flex-col h-full">
               <h1 className="text-3xl font-bold text-gray-800">{title}</h1>
               <p className="font-medium text-gray-500">

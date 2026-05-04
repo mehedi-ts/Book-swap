@@ -68,7 +68,7 @@ const Navbar = () => {
             </Link>
           </div>
         )}
-        <div className=" hidden">
+        <div className=" md:hidden flex">
           <Nabmenu></Nabmenu>
         </div>
       </div>

@@ -33,7 +33,7 @@ const ProfilePage = () => {
         <div className="title  flex flex-col md:flex-row md:text-left px-2 text-center items-center justify-between gap-3 md:gap-0 mb-10">
           <div className="">
             <h1 className="text-3xl font-bold text-gray-800">My Profile</h1>
-            <p className="text-xs text-gray-400 ">
+            <p className="text-xs text-gray-400 hidden md:flex ">
               Manage your profile information and preferences.
             </p>
           </div>
@@ -54,7 +54,7 @@ const ProfilePage = () => {
                 />
               </div>
             </div>
-            <div className="info">
+            <div className="info text-center md:text-left">
               <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3">
                 {name}
               </h1>
