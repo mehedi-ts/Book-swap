@@ -16,13 +16,11 @@ import {
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
-import { useEffect } from "react";
 import { IoIosLock } from "react-icons/io";
 import { toast } from "react-toastify";
-import { useSearchParams } from "next/navigation";
 
 const LoginPage = () => {
-  const searchParams = useSearchParams();
+  c;
 
   const onSubmit = async (e) => {
     e.preventDefault();
