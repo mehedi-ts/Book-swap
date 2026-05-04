@@ -20,8 +20,6 @@ import { IoIosLock } from "react-icons/io";
 import { toast } from "react-toastify";
 
 const LoginPage = () => {
-  c;
-
   const onSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
