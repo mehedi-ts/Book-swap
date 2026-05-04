@@ -1,6 +1,7 @@
 "use client";
 import Filter from "@/components/allBooks/Filter";
 import BookCard from "@/components/ui/BookCard";
+import Empty from "@/components/ui/Empty";
 import { Description, FieldError, Label, SearchField } from "@heroui/react";
 import { useEffect, useState } from "react";
 import { FaAngleUp, FaStar } from "react-icons/fa";
@@ -11,14 +12,21 @@ const AllBooksPage = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [appliedCategories, setAppliedCategories] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(
-        "https://book-swap-gilt-tau.vercel.app/data.json",
-        { cache: "no-store" },
-      );
-      const result = await res.json();
-      setBooksData(result);
+      try {
+        const res = await fetch(
+          "https://book-swap-gilt-tau.vercel.app/data.json",
+          { cache: "no-store" },
+        );
+        const result = await res.json();
+        setBooksData(result);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchData();
@@ -52,7 +60,13 @@ const AllBooksPage = () => {
     acc[cat] = (acc[cat] || 0) + 1;
     return acc;
   }, {});
-
+  if (loading) {
+    return (
+      <div className="max-w-7xl w-full mx-auto min-h-screen flex items-center justify-center">
+        <span className="loading loading-spinner text-7xl h-40 w-40  text-info"></span>
+      </div>
+    );
+  }
   return (
     <div className="max-w-7xl w-full mx-auto grid-cols-1 grid md:grid-cols-4 gap-5 py-3 md:py-5 lg:py-10">
       <div className="filter-box sticky hidden md:flex top-5 col-span-1 flex-col  px-5 bg-white rounded-2xl shadow-sm p-5 space-y-7 h-fit text-gray-800">
@@ -306,11 +320,15 @@ const AllBooksPage = () => {
         </nav>
 
         <div className="mt-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredBooks.map((book) => (
-              <BookCard key={book.id} book={book}></BookCard>
-            ))}
-          </div>
+          {filteredBooks.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredBooks.map((book) => (
+                <BookCard key={book.id} book={book}></BookCard>
+              ))}
+            </div>
+          ) : (
+            <Empty></Empty>
+          )}
         </div>
       </div>
     </div>
