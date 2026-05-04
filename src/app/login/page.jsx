@@ -76,7 +76,7 @@ const LoginPage = () => {
               <TextField
                 className="w-full"
                 isRequired
-                minLength={6}
+                minLength={8}
                 name="password"
                 type="password"
                 validate={(value) => {
@@ -95,7 +95,7 @@ const LoginPage = () => {
                 <Label>Password</Label>
                 <Input placeholder="Create a password" className="w-full" />
                 <Description>
-                  Must be at least 6 characters with 1 uppercase and 1 number
+                  Must be at least 8 characters with 1 uppercase and 1 number
                 </Description>
                 <FieldError />
               </TextField>
