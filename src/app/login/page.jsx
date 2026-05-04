@@ -24,16 +24,6 @@ import { useSearchParams } from "next/navigation";
 const LoginPage = () => {
   const searchParams = useSearchParams();
 
-  useEffect(() => {
-    const error = searchParams.get("error");
-
-    if (error === "unauthorized") {
-      toast.error("Please login first to access this page.", {
-        toastId: "unauthorized-error",
-      });
-    }
-  }, [searchParams]);
-
   const onSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;

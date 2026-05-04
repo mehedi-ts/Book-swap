@@ -9,9 +9,7 @@ export async function proxy(request) {
   });
 
   if (!session) {
-    const loginUrl = new URL("/login", request.url);
-    loginUrl.searchParams.set("error", "unauthorized");
-    return NextResponse.redirect(loginUrl);
+    return NextResponse.redirect(new URL("/login", request.url));
   }
 }
 
