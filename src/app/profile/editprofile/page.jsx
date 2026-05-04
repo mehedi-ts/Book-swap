@@ -10,12 +10,19 @@ const Page = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const image = e.target.image.value;
-    await authClient.updateUser({
-      image,
-      name,
-    });
-    toast.success("Profile updated successfully!");
-    route.push("/profile");
+    try {
+      const res = await authClient.updateUser({ name, image });
+
+      if (res?.error) {
+        toast.error(res.error.message || "Update failed!");
+        return;
+      }
+
+      toast.success("Profile updated successfully!");
+      route.push("/profile");
+    } catch (error) {
+      toast.error(error.message || "Something went wrong!");
+    }
   };
   return (
     <div className="max-w-7xl mx-auto w-full min-h-[80vh]  flex items-center justify-center py-8">
