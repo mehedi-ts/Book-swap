@@ -48,8 +48,8 @@ const signUpPage = () => {
               <div className="mb-5">
                 <Logo></Logo>
               </div>
-              <h1 className="text-3xl font-bold text-gray-800">
-                Create Your Account!
+              <h1 className="text-2xl md:text-3xl text-center md:text-left font-bold text-gray-800">
+                Register Your Account
               </h1>
               <p className="text-sm text-gray-600 text-center max-w-[280px] mt-2">
                 Join Book swap and start your reading journey. with thousands of
@@ -123,7 +123,7 @@ const signUpPage = () => {
                 type="submit"
               >
                 <FiUserPlus />
-                Sign Up
+                Register
               </Button>
             </div>
           </Fieldset>
