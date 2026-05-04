@@ -7,8 +7,10 @@ import {
   MdOutlineAlternateEmail,
   MdOutlineEmail,
 } from "react-icons/md";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebook, FaMapMarkerAlt } from "react-icons/fa";
 import { IoIosCall } from "react-icons/io";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoInstagram } from "react-icons/io5";
 
 const Footer = () => {
   return (
@@ -20,6 +22,23 @@ const Footer = () => {
             A community-driven platform to exchange, borrow, and explore books
             with ease.
           </p>
+          <div className="flex items-center gap-5">
+            <div className="w-8 h-8 bg-[#d1e0f8] p-1 flex items-center rounded-full justify-center cursor-pointer">
+              <div>
+                <FaFacebook className="text-xl" />
+              </div>
+            </div>
+            <div className="w-8 h-8 bg-[#d1e0f8] p-1 flex items-center rounded-full justify-center cursor-pointer">
+              <div>
+                <FaXTwitter className="text-xl" />
+              </div>
+            </div>
+            <div className="w-8 h-8 bg-[#d1e0f8] p-1 flex items-center rounded-full justify-center cursor-pointer">
+              <div>
+                <IoLogoInstagram className="text-xl" />
+              </div>
+            </div>
+          </div>
         </aside>
         <nav>
           <h6 className="footer-title">Quick Links</h6>
@@ -49,17 +68,18 @@ const Footer = () => {
           </Link>
         </nav>
         <nav>
-          <h6 className="footer-title"> Contact Info</h6>
-          <a className="link link-hover">
-            <FaMapMarkerAlt />
-            Dhaka, Bangladesh
+          <h6 className="footer-title"> Contact Us</h6>
+          <a className="link link-hover items-center gap-2">
+            <FaMapMarkerAlt className="text-[20px]" />
+            <span> Dhaka, Bangladesh</span>
           </a>
-          <a className="link link-hover">
-            <MdOutlineEmail /> support@bookswap.com
+          <a className="link link-hover items-center gap-2">
+            <MdOutlineEmail className="text-[20px]" />{" "}
+            <span>support@bookswap.com</span>
           </a>
-          <a className="link link-hover">
+          <a className="link link-hover flex items-center gap-2">
             {" "}
-            <IoIosCall /> +880 1234-567890
+            <IoIosCall className="text-[20px]" /> <span>+880 1234-567890</span>
           </a>
         </nav>
       </footer>

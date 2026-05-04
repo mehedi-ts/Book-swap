@@ -2,7 +2,7 @@
 import Filter from "@/components/allBooks/Filter";
 import BookCard from "@/components/ui/BookCard";
 import Empty from "@/components/ui/Empty";
-import { Description, FieldError, Label, SearchField } from "@heroui/react";
+import "animate.css";
 import { useEffect, useState } from "react";
 import { FaAngleUp, FaStar } from "react-icons/fa";
 import { IoFilterSharp, IoSearch } from "react-icons/io5";
@@ -69,7 +69,7 @@ const AllBooksPage = () => {
   }
   return (
     <div className="max-w-7xl w-full mx-auto grid-cols-1 grid md:grid-cols-4 gap-5 py-3 md:py-5 lg:py-10">
-      <div className="filter-box sticky hidden md:flex top-5 col-span-1 flex-col  px-5 bg-white rounded-2xl shadow-sm p-5 space-y-7 h-fit text-gray-800">
+      <div className="filter-box sticky hidden md:flex top-20 col-span-1 flex-col  px-5 bg-white rounded-2xl shadow-sm p-5 space-y-7 h-fit text-gray-800">
         <div className="flex items-center justify-between max-h-fit">
           {" "}
           <p className="text-2xl font-bold">Filters</p>{" "}
@@ -226,7 +226,7 @@ const AllBooksPage = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-gray-200"></div>
+        {/* <div className="border-t border-gray-200"></div>
         <div>
           <div className="flex flex-col max-h-fit space-y-3">
             <div className="flex items-center justify-between">
@@ -250,7 +250,7 @@ const AllBooksPage = () => {
               </label>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="border-t border-gray-200"></div>
         <div className="filter-btn flex flex-col gap-3">
           <button

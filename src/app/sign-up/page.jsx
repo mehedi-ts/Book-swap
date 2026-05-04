@@ -1,7 +1,7 @@
 "use client";
 import Logo from "@/components/ui/Logo";
 import { authClient } from "@/lib/auth-client";
-import { Check, FloppyDisk } from "@gravity-ui/icons";
+import "animate.css";
 import {
   Button,
   Card,
@@ -19,8 +19,11 @@ import {
 import Link from "next/link";
 import React from "react";
 import { FiUserPlus } from "react-icons/fi";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
-const signUpPage = () => {
+const SignUpPage = () => {
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -33,6 +36,12 @@ const signUpPage = () => {
       name,
       image,
     });
+    if (error) {
+      toast.error(error.message || "Login failed");
+      return;
+    }
+    await authClient.signOut();
+    router.push("/login");
   };
   const handleGoogleSignIn = async () => {
     await authClient.signIn.social({
@@ -41,7 +50,7 @@ const signUpPage = () => {
   };
   return (
     <div className="max-w-7xl mx-auto  w-full py-3 md:py-4 lg:py-7 min-h-[75vh] flex items-center justify-center   ">
-      <div className=" p-4 border-2 border-gray-200 rounded-2xl shadow-md w-[90%] md:w-2/3 lg:w-1/2">
+      <div className=" animate__animated animate__fadeInUp p-4 border-2 border-gray-200 rounded-2xl shadow-md w-[90%] md:w-2/3 lg:w-1/2">
         <Form className="w-full max-w-full flex" onSubmit={onSubmit}>
           <Fieldset className="">
             <div className="flex flex-col items-center">
@@ -162,9 +171,15 @@ const signUpPage = () => {
           </svg>
           <span>Continue with Google</span>
         </button>
+        <p className="text-center font-semibold text-sm mt-3">
+          Already have an account? Please{" "}
+          <Link className="text-[#2563EB]" href="/login">
+            login
+          </Link>{" "}
+        </p>
       </div>
     </div>
   );
 };
 
-export default signUpPage;
+export default SignUpPage;

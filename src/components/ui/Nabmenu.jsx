@@ -4,6 +4,7 @@ import { Bars } from "@gravity-ui/icons";
 import { Avatar, Button, Drawer } from "@heroui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { IoIosArrowDown } from "react-icons/io";
 import { LuLogOut } from "react-icons/lu";
 import { MdMenu } from "react-icons/md";
 
@@ -26,7 +27,7 @@ const Nabmenu = () => {
       <li
         className={` font-medium  hover:text-[#2563EB] duration-300 ${pathName === "/profile" ? "text-[#2563EB]  border-b-2 border-[#2563EB]" : "text-gray-700"}`}
       >
-        <Link href="/profile">Profile</Link>
+        <Link href="/profile">My Profile</Link>
       </li>
     </>
   );
@@ -49,16 +50,20 @@ const Nabmenu = () => {
               <div>
                 {user ? (
                   <div className="btns-nav flex flex-col items-center gap-3 mt-6 w-full">
-                    <Avatar>
-                      <Avatar.Image
-                        alt="John Doe"
-                        src={
-                          user.image ||
-                          "https://i.ibb.co.com/XxKSyMWQ/1765938532930.png"
-                        }
-                      />
-                      <Avatar.Fallback>{user.name[0]}</Avatar.Fallback>
-                    </Avatar>
+                    <Link href="/profile">
+                      <div className="flex items-center gap-3">
+                        <Avatar>
+                          <Avatar.Image
+                            alt="John Doe"
+                            src="https://i.ibb.co.com/XxKSyMWQ/1765938532930.p"
+                          />
+                          <Avatar.Fallback>{user.name[0]}</Avatar.Fallback>
+                        </Avatar>
+                        <span className="font-semibold flex items-center gap-0.5 text-gray-700 ">
+                          <p>{user?.name}</p> <IoIosArrowDown />
+                        </span>
+                      </div>
+                    </Link>
                     <button
                       onClick={async () => {
                         await authClient.signOut();

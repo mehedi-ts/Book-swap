@@ -1,7 +1,8 @@
 "use client";
 import Logo from "@/components/ui/Logo";
 import { authClient } from "@/lib/auth-client";
-import { Check, Lock } from "@gravity-ui/icons";
+
+import "animate.css";
 import {
   Button,
   Card,
@@ -17,6 +18,7 @@ import {
 import Link from "next/link";
 import React from "react";
 import { IoIosLock } from "react-icons/io";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const onSubmit = async (e) => {
@@ -29,6 +31,10 @@ const LoginPage = () => {
       password,
       callbackURL: "/",
     });
+    if (error) {
+      toast.error(error.message || "Login failed");
+      return;
+    }
   };
   const handleGoogleSignIn = async () => {
     await authClient.signIn.social({
@@ -38,7 +44,7 @@ const LoginPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto  w-full py-3 md:py-4 lg:py-7 min-h-[75vh] flex items-center justify-center   ">
-      <div className=" p-4 border-2 border-gray-200 rounded-2xl shadow-md w-[90%] md:w-2/3 lg:w-1/2">
+      <div className="animate__animated animate__fadeInUp p-4 border-2 border-gray-200 rounded-2xl shadow-md w-[90%] md:w-2/3 lg:w-1/2">
         <Form className="w-full max-w-full flex" onSubmit={onSubmit}>
           <Fieldset className="">
             <div className="flex flex-col items-center">
@@ -142,6 +148,13 @@ const LoginPage = () => {
           </svg>
           <span>Continue with Google</span>
         </button>
+        <p className="text-center font-semibold text-sm mt-3">
+          Don’t have an account yet? Please{" "}
+          <Link className="text-[#2563EB]" href="/sign-up">
+            register
+          </Link>{" "}
+          first.
+        </p>
       </div>
     </div>
   );

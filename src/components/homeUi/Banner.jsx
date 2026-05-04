@@ -2,34 +2,35 @@ import Image from "next/image";
 import { BookOpen, House, Person, Target } from "@gravity-ui/icons";
 import { GoDotFill } from "react-icons/go";
 import Link from "next/link";
+import "animate.css";
 
 const Banner = () => {
   return (
-    <div className="max-w-7xl mx-auto ">
-      <div className=" relative w-full h-screen  md:h-160 overflow-hidden bg-white">
-        <div className="absolute hidden md:flex inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.15),rgba(59,130,246,0.1),transparent_60%)]"></div>
-        <div className="absolute hidden md:flex bottom-0 left-0 w-full h-40 bg-linear-to-t from-white to-transparent"></div>
+    <div className="max-w-7xl mx-auto lg:py-7 py-3 ">
+      <div className=" relative w-full h-screen  md:h-120 overflow-hidden bg-[#ffffff24]">
+        {/* <div className="absolute hidden md:flex inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.15),rgba(59,130,246,0.1),transparent_60%)]"></div> */}
+        {/* <div className="absolute hidden md:flex bottom-0 left-0 w-full h-40 bg-linear-to-t from-white to-transparent"></div> */}
         {/* banner content */}
         <div className="banner-main-con  grid grid-cols-1 md:grid-cols-2 items-center w-full h-full gap-5">
-          <div className="banner-con flex flex-col gap-5 px-4 md:pl-10 md:px-0 items-center md:items-start text-center md:text-left bg-white/60 backdrop-blur-md p-6 rounded-2xl max-w-xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-medium shadow-sm">
+          <div className="animate__animated animate__slideInDown banner-con flex flex-col gap-5 px-4 md:pl-0 md:px-1 items-center md:items-start text-center md:text-left p-6 rounded-2xl max-w-xl">
+            <div className=" inline-flex items-center  gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-medium shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
               <p className="leading-none">Read More, Achieve More</p>
             </div>
-            <h1 className="text-[#111827] font-bold text-5xl sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className=" text-[#111827] font-bold text-5xl sm:text-5xl md:text-6xl lg:text-7xl">
               Find Your <br /> <span className="text-[#2563EB]">Next Read</span>
             </h1>
-            <p className="text-[#6B7280] max-w-full md:max-w-80 text-base flex items-center gap-1.5">
+            <p className=" text-[#6B7280] max-w-full md:max-w-80 text-base  flex items-center gap-1.5">
               <span>
                 Explore thousands of books, borrow easily, and fuel your
                 learning journey.
               </span>
             </p>
-            <Link href="/all-books">
-              <button className="btn bg-linear-to-r from-[#2563EB] to-[#3B82F6] text-[#FFFFFF] font-semibold max-w-fit ">
+            <Link className="" href="/all-books">
+              <button className=" btn bg-linear-to-r from-[#2563EB] to-[#3B82F6] text-[#FFFFFF] font-semibold max-w-fit ">
                 Browse Now →
               </button>
             </Link>
@@ -78,7 +79,7 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="banner-img relative  w-full  h-[250px] sm:h-[350px] md:h-full">
+          <div className="animate__animated animate__slideInUp banner-img relative  w-full  h-[250px] sm:h-[350px] md:h-full">
             <Image
               src="https://i.ibb.co.com/B2BFjnRM/0703edc5-f321-4372-bbc6-4e0ceae9a109-removebg-preview.png"
               alt="books"

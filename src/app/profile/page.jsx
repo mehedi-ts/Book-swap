@@ -29,7 +29,7 @@ const ProfilePage = () => {
   // }
   return (
     <div className="max-w-7xl mx-auto w-full">
-      <div className="main-profile py-4 md:py-10">
+      <div className="main-profile max-w-4xl w-full mx-auto py-4 md:py-10 border border-gray-200 p-8 rounded-xl my-3">
         <div className="title  flex flex-col md:flex-row md:text-left px-2 text-center items-center justify-between gap-3 md:gap-0 mb-10">
           <div className="">
             <h1 className="text-3xl font-bold text-gray-800">My Profile</h1>
@@ -42,7 +42,7 @@ const ProfilePage = () => {
           </div>
         </div>
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="pro flex flex-col md:flex-row items-center md:items-start gap-5 md:gap-7 p-9 border-2 border-gray-200 rounded-xl mb-4">
+          <div className="pro flex flex-col md:flex-row items-center md:items-start gap-5 md:gap-7  border-b-2 border-gray-200 py-3 pb-6 mb-2">
             <div className="img   rounded-full overflow-hidden">
               <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40">
                 <Image
@@ -69,7 +69,7 @@ const ProfilePage = () => {
               </p>
             </div>
           </div>
-          <div className=" p-9 border-2 border-gray-200 rounded-xl flex flex-col gap-4">
+          {/* <div className=" p-9  flex flex-col gap-4">
             <h4 className="text-lg font-semibold text-gray-800 ">account</h4>
             <div className="flex items-center justify-between  py-2 px-1 bg-white rounded-md shadow-sm">
               <div className="flex gap-5 items-center">
@@ -101,7 +101,7 @@ const ProfilePage = () => {
                 <MdKeyboardArrowRight size={28} />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

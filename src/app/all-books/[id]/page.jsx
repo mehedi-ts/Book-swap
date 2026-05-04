@@ -8,6 +8,7 @@ import { Description } from "@heroui/react";
 import { BsShareFill } from "react-icons/bs";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
+import BorrowBtn from "@/components/allBooks/BorrowBtn";
 
 const BookDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -62,8 +63,9 @@ const BookDetailsPage = async ({ params }) => {
                 <span>{rating}</span>
                 {`(${total_reviews} Reviews)`}
               </p>
-              <p className="max-w-lg text-sm text-gray-500  flex-1">
-                {description}
+              <p className="max-w-lg text-sm text-gray-500  ">{description}</p>
+              <p className="text-sm font-medium text-green-600 mt-2 flex-1">
+                {`Available Copies: 5`}
               </p>
             </div>
             <div className="book-stats grid grid-cols-2 md:grid-cols-4 gap-5">
@@ -105,10 +107,7 @@ const BookDetailsPage = async ({ params }) => {
               </div>
             </div>
             <div className="action-btn-details flex items-center gap-5">
-              <button className="btn bg-[#2563EB] hover:bg-[#1c58db] text-white">
-                {" "}
-                Borrow Book <FaArrowRightLong size={20} />
-              </button>
+              <BorrowBtn></BorrowBtn>
               <button className="btn btn-outline border-[#2563EB] hover:bg-[#1c58db] text-[#1c58db] hover:text-white">
                 {" "}
                 Add to Wishlist <FaRegHeart />
